@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.Web", "GameOfLife.Web\GameOfLife.Web.csproj", "{880C844A-AC7D-4A4A-BA4F-0DADB305E237}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{2D99BE27-177C-4C1B-A63E-607600E7902D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{880C844A-AC7D-4A4A-BA4F-0DADB305E237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{880C844A-AC7D-4A4A-BA4F-0DADB305E237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{880C844A-AC7D-4A4A-BA4F-0DADB305E237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{880C844A-AC7D-4A4A-BA4F-0DADB305E237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D99BE27-177C-4C1B-A63E-607600E7902D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D99BE27-177C-4C1B-A63E-607600E7902D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D99BE27-177C-4C1B-A63E-607600E7902D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D99BE27-177C-4C1B-A63E-607600E7902D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
