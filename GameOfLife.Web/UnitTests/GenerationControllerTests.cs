@@ -16,7 +16,7 @@ namespace GameOfLife.Web.UnitTests
     public class GenerationControllerTests
     {
         private GenerationController _controller;
-        private Civilisation _civilisation;
+        private Population _population;
 
         [SetUp]
         public void SetupController()
@@ -31,13 +31,13 @@ namespace GameOfLife.Web.UnitTests
                         new short[] {0, 1, 0},
                     };
 
-            _civilisation = new Civilisation() { Cells = cells };
+            _population = new Population() { Cells = cells };
         }
 
         [Test]
         public void PostCreatesCivilisation()
         {
-            var response = _controller.Post(_civilisation);
+            var response = _controller.Post(_population);
 
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created));
         }
@@ -45,7 +45,7 @@ namespace GameOfLife.Web.UnitTests
         [Test]
         public void PostReturnsCivilisationsLocation()
         {
-            var response = _controller.Post(_civilisation);
+            var response = _controller.Post(_population);
 
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created));
 
@@ -55,8 +55,8 @@ namespace GameOfLife.Web.UnitTests
         [Test]
         public void PostCreatesNewCivilisationResource()
         {
-            var firstId = GetResourceId( _controller.Post(_civilisation) );
-            var secondId = GetResourceId( _controller.Post(_civilisation) );
+            var firstId = GetResourceId( _controller.Post(_population) );
+            var secondId = GetResourceId( _controller.Post(_population) );
 
             Assert.That(firstId, Is.Not.EqualTo(secondId));
         }
@@ -72,7 +72,7 @@ namespace GameOfLife.Web.UnitTests
         [Test]
         public void GetReturnsTheCorrectCivilisation()
         {
-            var resourceId = GetResourceId(_controller.Post(_civilisation));
+            var resourceId = GetResourceId(_controller.Post(_population));
             
             var response = _controller.Get(resourceId);
 
@@ -90,7 +90,7 @@ namespace GameOfLife.Web.UnitTests
         [Test]
         public void PutEvolvesTheCorrectCivilisation()
         {
-            var resourceId = GetResourceId(_controller.Post(_civilisation));
+            var resourceId = GetResourceId(_controller.Post(_population));
 
             var response = _controller.Put(resourceId, 1);
 
@@ -101,7 +101,7 @@ namespace GameOfLife.Web.UnitTests
         [TestCase(2, 2)]
         public void PutUpdatesCivilisationGenerationCount(int evolutions, int expectedGenerationCount)
         {
-            var resourceId = GetResourceId(_controller.Post(_civilisation));
+            var resourceId = GetResourceId(_controller.Post(_population));
 
             var response = _controller.Put(resourceId, evolutions);
 
@@ -112,7 +112,7 @@ namespace GameOfLife.Web.UnitTests
         [TestCase(2, 2)]
         public void SuccessivePutsUpdateCivilisationGenerationCount(int iterationCount, int expectedGenerationCount)
         {
-            var resourceId = GetResourceId(_controller.Post(_civilisation));
+            var resourceId = GetResourceId(_controller.Post(_population));
 
             var iterations = new int[iterationCount];
 

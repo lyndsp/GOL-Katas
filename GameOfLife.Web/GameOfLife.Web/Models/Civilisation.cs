@@ -2,11 +2,10 @@
 
 namespace GameOfLife.Web.Models
 {
-    public class Civilisation
+    public class Civilisation : Population
     {
         public int Id;
         public int Generation;
-        public IEnumerable<IEnumerable<short>> Cells;
 
         public void Evolve()
         {

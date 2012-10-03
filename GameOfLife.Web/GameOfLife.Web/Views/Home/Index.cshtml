@@ -14,7 +14,7 @@
                 <h2>Learn about the Single Responsibility Principle and applying it to the Game of Life.</h2>
             </hgroup>
             <p>
-                To do.
+                To see a sample response navigate to <a href="@Url.Content("~/" + @Url.HttpRouteUrl("DefaultApi", new { controller = "generation", id = 0 }))">@Request.Url.AbsoluteUri.TrimEnd('/')@Url.HttpRouteUrl("DefaultApi", new { controller = "generation", id = 0 })</a>
             </p>
             <p>
                 Here's some more resources that may be of use:
@@ -33,14 +33,17 @@
                 <h5>Debug this solution</h5>
                 This will help you explore how the solution works, and the path way through it.
             </li>
-
             <li class="two">
-                <h5>Analyse classes that break the SRP</h5>
-                They shouldn't be too hard to find!
+                <h5>Discuss how the GenerationController breaks the SRP</h5>
+                Consider the options for fixing it.
             </li>
             <li class="three">
                 <h5>Fix the SRP breakages</h5>
-                Don't forget to use TDD!
+                Don't forget to use TDD! There are several possible solutions.
+            </li>
+            <li class="four">
+                <h5>Extension exercise</h5>
+                Add caching to the Get method and authentication to all methods.
             </li>
         </ol>
     </section>
